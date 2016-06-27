@@ -1,5 +1,5 @@
 
-// ComposeWavPlayer.cpp : ¶¨ÒåÓ¦ÓÃ³ÌĞòµÄÀàĞĞÎª¡£
+// ComposeWavPlayer.cpp : å®šä¹‰åº”ç”¨ç¨‹åºçš„ç±»è¡Œä¸ºã€‚
 //
 
 //#include "stdafx.h"
@@ -19,33 +19,33 @@ BEGIN_MESSAGE_MAP(CComposeWavPlayerApp, CWinApp)
 END_MESSAGE_MAP()
 
 
-// CComposeWavPlayerApp ¹¹Ôì
+// CComposeWavPlayerApp æ„é€ 
 CComposeWavPlayerApp::CComposeWavPlayerApp()
 {
-	// Ö§³ÖÖØĞÂÆô¶¯¹ÜÀíÆ÷
+	// æ”¯æŒé‡æ–°å¯åŠ¨ç®¡ç†å™¨
 	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_RESTART;
 }
 
 
-// Î¨Ò»µÄÒ»¸ö CComposeWavPlayerApp ¶ÔÏó
+// å”¯ä¸€çš„ä¸€ä¸ª CComposeWavPlayerApp å¯¹è±¡
 
 CComposeWavPlayerApp theApp;
 
 
-// CComposeWavPlayerApp ³õÊ¼»¯
+// CComposeWavPlayerApp åˆå§‹åŒ–
 
 BOOL CComposeWavPlayerApp::InitInstance()
 {
 
 	INITCOMMONCONTROLSEX InitCtrls;
 	InitCtrls.dwSize = sizeof(InitCtrls);
-	// ½«ËüÉèÖÃÎª°üÀ¨ËùÓĞÒªÔÚÓ¦ÓÃ³ÌĞòÖĞÊ¹ÓÃµÄ
-	// ¹«¹²¿Ø¼şÀà¡£
+	// å°†å®ƒè®¾ç½®ä¸ºåŒ…æ‹¬æ‰€æœ‰è¦åœ¨åº”ç”¨ç¨‹åºä¸­ä½¿ç”¨çš„
+	// å…¬å…±æ§ä»¶ç±»ã€‚
 	InitCtrls.dwICC = ICC_WIN95_CLASSES;
 	InitCommonControlsEx(&InitCtrls);
 	
 	CWinApp::InitInstance();
-	LPTSTR cmd = ::GetCommandLine();
+	//LPTSTR cmd = ::GetCommandLine();
 	int argc = 0;
 	WCHAR  * const *argv;
 	argv = ::CommandLineToArgvW(cmd, &argc);
@@ -59,19 +59,19 @@ BOOL CComposeWavPlayerApp::InitInstance()
 	{
 		g_strLogDir = argv[1];
 		g_strSampleDir = "";
-		//system("start cmd /c D:\\Compose\\ÑùÀıÈÕÖ¾²¥·Å¹¤¾ß0427\\ComposeWavPlayer20160424\\Debug\\SampleAbstracter.exe D:\\Compose\\workspace\\1s.wav");
+		//system("start cmd /c D:\\Compose\\æ ·ä¾‹æ—¥å¿—æ’­æ”¾å·¥å…·0427\\ComposeWavPlayer20160424\\Debug\\SampleAbstracter.exe D:\\Compose\\workspace\\1s.wav");
 		//return FALSE;
 		CFile fpr;
 		if (!fpr.Open(g_strLogDir, CFile::modeRead))
 		{
-			AfxMessageBox(_T("ÈÕÖ¾ÎÄ¼şÎŞ·¨´ò¿ª"));
+			AfxMessageBox(_T("æ—¥å¿—æ–‡ä»¶æ— æ³•æ‰“å¼€"));
 			return FALSE;
 		}
 		fpr.Close();
 	}
 	else
 	{
-		AfxMessageBox(_T("²ÎÊı²»ÕıÈ·£¬Ó¦Îª£ºÔ´(Ä£°å)ÎÄ¼şÂ·¾¶ ÈÕÖ¾ÎÄ¼şÂ·¾¶\n"));
+		AfxMessageBox(_T("å‚æ•°ä¸æ­£ç¡®ï¼Œåº”ä¸ºï¼šæº(æ¨¡æ¿)æ–‡ä»¶è·¯å¾„ æ—¥å¿—æ–‡ä»¶è·¯å¾„\n"));
 		return FALSE;
 	}
 
@@ -79,49 +79,49 @@ BOOL CComposeWavPlayerApp::InitInstance()
 	AfxEnableControlContainer();
 
 
-	// ´´½¨ shell ¹ÜÀíÆ÷£¬ÒÔ·À¶Ô»°¿ò°üº¬
-	// ÈÎºÎ shell Ê÷ÊÓÍ¼¿Ø¼ş»ò shell ÁĞ±íÊÓÍ¼¿Ø¼ş¡£
+	// åˆ›å»º shell ç®¡ç†å™¨ï¼Œä»¥é˜²å¯¹è¯æ¡†åŒ…å«
+	// ä»»ä½• shell æ ‘è§†å›¾æ§ä»¶æˆ– shell åˆ—è¡¨è§†å›¾æ§ä»¶ã€‚
 	CShellManager *pShellManager = new CShellManager;
 
-	// ¼¤»î¡°Windows Native¡±ÊÓ¾õ¹ÜÀíÆ÷£¬ÒÔ±ãÔÚ MFC ¿Ø¼şÖĞÆôÓÃÖ÷Ìâ
+	// æ¿€æ´»â€œWindows Nativeâ€è§†è§‰ç®¡ç†å™¨ï¼Œä»¥ä¾¿åœ¨ MFC æ§ä»¶ä¸­å¯ç”¨ä¸»é¢˜
 	CMFCVisualManager::SetDefaultManager(RUNTIME_CLASS(CMFCVisualManagerWindows));
 
-	// ±ê×¼³õÊ¼»¯
-	// Èç¹ûÎ´Ê¹ÓÃÕâĞ©¹¦ÄÜ²¢Ï£Íû¼õĞ¡
-	// ×îÖÕ¿ÉÖ´ĞĞÎÄ¼şµÄ´óĞ¡£¬ÔòÓ¦ÒÆ³ıÏÂÁĞ
-	// ²»ĞèÒªµÄÌØ¶¨³õÊ¼»¯Àı³Ì
-	// ¸ü¸ÄÓÃÓÚ´æ´¢ÉèÖÃµÄ×¢²á±íÏî
-	// TODO:  Ó¦ÊÊµ±ĞŞ¸Ä¸Ã×Ö·û´®£¬
-	// ÀıÈçĞŞ¸ÄÎª¹«Ë¾»ò×éÖ¯Ãû
-	SetRegistryKey(_T("Ó¦ÓÃ³ÌĞòÏòµ¼Éú³ÉµÄ±¾µØÓ¦ÓÃ³ÌĞò"));
+	// æ ‡å‡†åˆå§‹åŒ–
+	// å¦‚æœæœªä½¿ç”¨è¿™äº›åŠŸèƒ½å¹¶å¸Œæœ›å‡å°
+	// æœ€ç»ˆå¯æ‰§è¡Œæ–‡ä»¶çš„å¤§å°ï¼Œåˆ™åº”ç§»é™¤ä¸‹åˆ—
+	// ä¸éœ€è¦çš„ç‰¹å®šåˆå§‹åŒ–ä¾‹ç¨‹
+	// æ›´æ”¹ç”¨äºå­˜å‚¨è®¾ç½®çš„æ³¨å†Œè¡¨é¡¹
+	// TODO:  åº”é€‚å½“ä¿®æ”¹è¯¥å­—ç¬¦ä¸²ï¼Œ
+	// ä¾‹å¦‚ä¿®æ”¹ä¸ºå…¬å¸æˆ–ç»„ç»‡å
+	SetRegistryKey(_T("åº”ç”¨ç¨‹åºå‘å¯¼ç”Ÿæˆçš„æœ¬åœ°åº”ç”¨ç¨‹åº"));
 
 	CComposeWavPlayerDlg dlg;
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)
 	{
-		// TODO:  ÔÚ´Ë·ÅÖÃ´¦ÀíºÎÊ±ÓÃ
-		//  ¡°È·¶¨¡±À´¹Ø±Õ¶Ô»°¿òµÄ´úÂë
+		// TODO:  åœ¨æ­¤æ”¾ç½®å¤„ç†ä½•æ—¶ç”¨
+		//  â€œç¡®å®šâ€æ¥å…³é—­å¯¹è¯æ¡†çš„ä»£ç 
 	}
 	else if (nResponse == IDCANCEL)
 	{
-		// TODO:  ÔÚ´Ë·ÅÖÃ´¦ÀíºÎÊ±ÓÃ
-		//  ¡°È¡Ïû¡±À´¹Ø±Õ¶Ô»°¿òµÄ´úÂë
+		// TODO:  åœ¨æ­¤æ”¾ç½®å¤„ç†ä½•æ—¶ç”¨
+		//  â€œå–æ¶ˆâ€æ¥å…³é—­å¯¹è¯æ¡†çš„ä»£ç 
 	}
 	else if (nResponse == -1)
 	{
-		TRACE(traceAppMsg, 0, "¾¯¸æ: ¶Ô»°¿ò´´½¨Ê§°Ü£¬Ó¦ÓÃ³ÌĞò½«ÒâÍâÖÕÖ¹¡£\n");
-		TRACE(traceAppMsg, 0, "¾¯¸æ: Èç¹ûÄúÔÚ¶Ô»°¿òÉÏÊ¹ÓÃ MFC ¿Ø¼ş£¬ÔòÎŞ·¨ #define _AFX_NO_MFC_CONTROLS_IN_DIALOGS¡£\n");
+		TRACE(traceAppMsg, 0, "è­¦å‘Š: å¯¹è¯æ¡†åˆ›å»ºå¤±è´¥ï¼Œåº”ç”¨ç¨‹åºå°†æ„å¤–ç»ˆæ­¢ã€‚\n");
+		TRACE(traceAppMsg, 0, "è­¦å‘Š: å¦‚æœæ‚¨åœ¨å¯¹è¯æ¡†ä¸Šä½¿ç”¨ MFC æ§ä»¶ï¼Œåˆ™æ— æ³• #define _AFX_NO_MFC_CONTROLS_IN_DIALOGSã€‚\n");
 	}
 
-	// É¾³ıÉÏÃæ´´½¨µÄ shell ¹ÜÀíÆ÷¡£
+	// åˆ é™¤ä¸Šé¢åˆ›å»ºçš„ shell ç®¡ç†å™¨ã€‚
 	if (pShellManager != NULL)
 	{
 		delete pShellManager;
 	}
 
-	// ÓÉÓÚ¶Ô»°¿òÒÑ¹Ø±Õ£¬ËùÒÔ½«·µ»Ø FALSE ÒÔ±ãÍË³öÓ¦ÓÃ³ÌĞò£¬
-	//  ¶ø²»ÊÇÆô¶¯Ó¦ÓÃ³ÌĞòµÄÏûÏ¢±Ã¡£
+	// ç”±äºå¯¹è¯æ¡†å·²å…³é—­ï¼Œæ‰€ä»¥å°†è¿”å› FALSE ä»¥ä¾¿é€€å‡ºåº”ç”¨ç¨‹åºï¼Œ
+	//  è€Œä¸æ˜¯å¯åŠ¨åº”ç”¨ç¨‹åºçš„æ¶ˆæ¯æ³µã€‚
 	return FALSE;
 }
 
