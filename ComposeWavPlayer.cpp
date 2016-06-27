@@ -2,7 +2,7 @@
 // ComposeWavPlayer.cpp : 定义应用程序的类行为。
 //
 
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "ComposeWavPlayer.h"
 #include "ComposeWavPlayerDlg.h"
 

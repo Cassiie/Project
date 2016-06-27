@@ -2,7 +2,7 @@
 // ComposeWavPlayerDlg.cpp : 实现文件
 //
 
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "ComposeWavPlayer.h"
 #include "ComposeWavPlayerDlg.h"
 #include "afxdialogex.h"
