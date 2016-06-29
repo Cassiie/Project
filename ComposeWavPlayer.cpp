@@ -23,7 +23,11 @@ END_MESSAGE_MAP()
 CComposeWavPlayerApp::CComposeWavPlayerApp()
 {
 	// 支持重新启动管理器
+<<<<<<< .merge_file_a07460
 	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_RESTART;
+=======
+        m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_RESTART;
+>>>>>>> .merge_file_a11896
 }
 
 
@@ -44,7 +48,7 @@ BOOL CComposeWavPlayerApp::InitInstance()
 	InitCommonControlsEx(&InitCtrls);
 	
 	CWinApp::InitInstance();
-	LPTSTR cmd = ::GetCommandLine();
+	//LPTSTR cmd = ::GetCommandLine();
 	int argc = 0;
 	WCHAR  * const *argv;
 	argv = ::CommandLineToArgvW(cmd, &argc);

@@ -22,7 +22,7 @@ private:
 
 // ÷ÿ–¥
 public:
-	virtual BOOL InitInstance();
+//	virtual BOOL InitInstance();
 
 //  µœ÷
 
