@@ -23,7 +23,7 @@ END_MESSAGE_MAP()
 CComposeWavPlayerApp::CComposeWavPlayerApp()
 {
 	// 支持重新启动管理器
-	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_RESTART;
+//	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_RESTART;
 }
 
 

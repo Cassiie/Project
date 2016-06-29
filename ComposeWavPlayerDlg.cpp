@@ -22,7 +22,7 @@ public:
 	CAboutDlg();
 
 // 对话框数据
-	enum { IDD = IDD_ABOUTBOX };
+//	enum { IDD = IDD_ABOUTBOX };
 
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持

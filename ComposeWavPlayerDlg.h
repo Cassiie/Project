@@ -18,7 +18,7 @@ class CComposeWavPlayerDlg : public CDialogEx
 {
 // 构造
 public:
-	CComposeWavPlayerDlg(CWnd* pParent = NULL);	// 标准构造函数
+//	CComposeWavPlayerDlg(CWnd* pParent = NULL);	// 标准构造函数
 
 // 对话框数据
 	enum { IDD = IDD_COMPOSEWAVPLAYER_DIALOG };
