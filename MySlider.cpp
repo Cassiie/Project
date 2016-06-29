@@ -33,7 +33,7 @@ void CNiceSliderCtrl::OnMouseMove(UINT nFlags, CPoint point)
 	{
 		if (SetThumb(point))
 		{
-			m_bDragChanged = true;
+		//	m_bDragChanged = true;
 			PostMessageToParent(TB_THUMBTRACK);
 		}
 	}
