@@ -4,7 +4,7 @@
 IMPLEMENT_DYNAMIC(CNiceSliderCtrl, CSliderCtrl)
 
 
-BEGIN_MESSAGE_MAP(CNiceSliderCtrl, CSliderCtrl)
+//BEGIN_MESSAGE_MAP(CNiceSliderCtrl, CSliderCtrl)
 	//{{AFX_MSG_MAP(CNiceSliderCtrl)
 	ON_WM_LBUTTONDOWN()
 	ON_WM_MOUSEMOVE()

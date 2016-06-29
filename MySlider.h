@@ -3,7 +3,7 @@
 
 class CNiceSliderCtrl : public CSliderCtrl
 {
-public:
+private:
 	DECLARE_DYNAMIC(CNiceSliderCtrl)
 		CNiceSliderCtrl() : m_bDragging(false), m_bDragChanged(false) {}
 protected:

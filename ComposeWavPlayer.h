@@ -17,7 +17,7 @@
 
 class CComposeWavPlayerApp : public CWinApp
 {
-public:
+private:
 	CComposeWavPlayerApp();
 
 // ÖØÐ´
